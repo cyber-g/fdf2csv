@@ -32,7 +32,8 @@ fdf_list = re.sub("(þÿ|FEFF)", "", fdf)
 # print(fdf_list)
 
 # Where the magic happened
-pattern = re.compile('\/T\(([^)]*)\)\/V[(/<]([^>)]*)')
+# Help : https://regex101.com/
+pattern = re.compile('\/T[ ]*\(([^)]*)\)[\n]\/V[ ]*[(<]*([\/]*[^>)\n]*)')
 fdf_list = re.findall(pattern, fdf_list)
 # print(fdf_list)
 
